@@ -1,0 +1,28 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+}
+
+
+html body #root   {
+ display: flex;
+  flex-direction: column;
+
+}
+::-webkit-scrollbar {
+  display: none;
+}
+:root{
+/*-----------Paddings,Margins------------*/
+
+
+  /*--------------------Fonts------------*/
+  font-family: "Inter", sans-serif;
+
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}

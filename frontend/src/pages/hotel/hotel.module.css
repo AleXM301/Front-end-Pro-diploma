@@ -1,0 +1,26 @@
+
+
+
+
+.hotel_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.hotel_info_container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.hotel_info{
+    font-size: 20px;
+    text-align: center;
+
+}
+.hotel_image{
+    width: 300px;
+    height: auto;
+    margin: 20px;
+}

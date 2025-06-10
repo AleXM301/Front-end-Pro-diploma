@@ -1,0 +1,17 @@
+.header {
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+}
+.header_home{
+    color: white;
+    position: absolute;
+}
+.header_nav{
+    display: flex;
+    justify-content: center;
+    gap: 41px;
+    align-items: center;
+}
