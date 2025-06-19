@@ -18,9 +18,11 @@ const Hotel = () => {
     if (loading) {
         return (<p>Loading...</p>)
     }
+    if (error) {
+        return (<p>{error}</p>)
+    }
     console.log(error);
     console.log(hotel);
-    // <img src={hotel.image} className={styles.hotel_image} alt="hotel" />
     return (
         <div className={styles.hotel_container}>
 
@@ -32,7 +34,7 @@ const Hotel = () => {
                 <p className={styles.hotel_info}>Country code: {hotel.country_code ? hotel.country_code : "нету"}</p>
                 <p className={styles.hotel_info}>Hotel rating: {hotel.hotel_rating} </p>
                 <p className={styles.hotel_info}>Phone number: {hotel.phone_number ? hotel.phone_number : "нету"} </p>
-                <p className={styles.hotel_info}>State: {hotel.state ? hotel.websites : "нету"} </p>
+                <p className={styles.hotel_info}>State: {hotel.state ? hotel.state  : "нету"} </p>
                 <p className={styles.hotel_info}> Websites: {hotel.websites ? hotel.websites : "нету"} </p>
             </div>
 

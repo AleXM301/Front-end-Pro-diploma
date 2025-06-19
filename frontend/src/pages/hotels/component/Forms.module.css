@@ -1,0 +1,23 @@
+.filters_container {
+    margin-top: 16px;
+    border: #D9D9D9 1px solid;
+    min-width: 287px;
+}
+
+.filters_container {
+}
+
+.filters_typography {
+    border-bottom: #D9D9D9 1px solid;
+    padding: 10px 20px;
+}
+
+.filters_title {
+    font-weight: 500;
+    font-size: 16px;
+
+}
+
+.filters_form {
+    padding: 5px 25px;
+}

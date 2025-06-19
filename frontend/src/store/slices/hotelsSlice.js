@@ -8,7 +8,11 @@ const hotelsSlice = createSlice({
         loading: true,
         error: "",
     },
-    reducers: {},
+    reducers: {
+        replaceHotels: (state, action) => {
+            return action.payload;
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(getHotels.pending, (state) => {
@@ -26,5 +30,7 @@ const hotelsSlice = createSlice({
             })
     },
 })
+
+export const {replaceHotels} = hotelsSlice.actions;
 export default hotelsSlice.reducer;
 
