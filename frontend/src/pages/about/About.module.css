@@ -4,9 +4,15 @@
     margin: 0 auto;
     color:#374151A1
 }
+.list_item{
+    width:100%;
+    display: flex;
+    gap: 8px;
+    padding: 8px 0 !important;
+
+}
 .about_image{
     width: 30px;
-    margin-right: 8px;
 }
 strong{
     color: black;

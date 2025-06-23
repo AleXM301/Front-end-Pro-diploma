@@ -30,15 +30,15 @@ const About = () => {
                 </Typography>
 
                 <List>
-                    <ListItem><img className={styles.about_image} src={reactSvg} alt={'reactSvg'}/>
+                    <ListItem  className={styles.list_item}><img className={styles.about_image} src={reactSvg} alt={'reactSvg'}/>
                         <strong>React</strong> – for building the user interface</ListItem>
-                    <ListItem><img className={styles.about_image} src={reduxSvg} alt={'reduxSvg'}/>
+                    <ListItem  className={styles.list_item}><img className={styles.about_image} src={reduxSvg} alt={'reduxSvg'}/>
                         <strong>Redux Toolkit</strong> – for global state management</ListItem>
-                    <ListItem><img className={styles.about_image} src={reactRouter} alt={'reactRouter'}/>
+                    <ListItem  className={styles.list_item}><img className={styles.about_image} src={reactRouter} alt={'reactRouter'}/>
                         <strong>React Router</strong> – for client-side routing</ListItem>
-                    <ListItem><img className={styles.about_image} src={reduxSvg} alt={'reactRouter'}/><
+                    <ListItem  className={styles.list_item}><img className={styles.about_image} src={reduxSvg} alt={'reactRouter'}/><
                         strong>Redux Thunk</strong> – for handling asynchronous actions</ListItem>
-                    <ListItem><img className={styles.about_image} src={materialUI} alt={'reactRouter'}/>
+                    <ListItem  className={styles.list_item}><img className={styles.about_image} src={materialUI} alt={'reactRouter'}/>
                         <strong>Material UI</strong> – for styling and layout</ListItem>
                 </List>
 
