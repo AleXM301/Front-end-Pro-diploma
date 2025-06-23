@@ -5,7 +5,7 @@ import {getHotelsById} from "@thunks/hotelsThunk.js";
 import {useDispatch, useSelector} from "react-redux";
 import locationIcon from "@assets/location.svg"
 
-import styles from "./hotel.module.css";
+import styles from "./Hotel.module.css";
 
 
 const Hotel = () => {
