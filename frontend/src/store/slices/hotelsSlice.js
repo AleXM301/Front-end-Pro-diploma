@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {getHotels} from "../thunks/hotelsThunk.js";
+import {getHotels} from "@thunks/hotelsThunk.js";
 
 const hotelsSlice = createSlice({
     name: "hotels",
@@ -7,10 +7,11 @@ const hotelsSlice = createSlice({
         hotels: [],
         loading: true,
         error: "",
-    },
-    reducers: {
-        replaceHotels: (state, action) => {
-            return action.payload;
+        pagination: {
+            page: 1,
+            limit: null,
+            currentPage: 1,
+            totalPages: 1
         }
     },
     extraReducers: (builder) => {
@@ -20,9 +21,13 @@ const hotelsSlice = createSlice({
                 state.error = "";
             })
             .addCase(getHotels.fulfilled, (state, action) => {
-                state.hotels = action.payload;
+                state.hotels = action.payload.hotels;
                 state.loading = false;
                 state.error = "";
+                state.pagination.page = action.payload.page;
+                state.pagination.limit = action.payload.limit;
+                state.pagination.currentPage = action.payload.currentPage;
+                state.pagination.totalPages = action.payload.totalPages;
             })
             .addCase(getHotels.rejected, (state, action) => {
                 state.loading = false;
@@ -30,7 +35,5 @@ const hotelsSlice = createSlice({
             })
     },
 })
-
-export const {replaceHotels} = hotelsSlice.actions;
 export default hotelsSlice.reducer;
 

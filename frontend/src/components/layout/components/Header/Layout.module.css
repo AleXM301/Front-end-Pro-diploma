@@ -1,0 +1,57 @@
+.header_link_white {
+    position: relative;
+}
+
+.header_link_white::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    transition: 0.1s;
+    animation: hoverOut 0.3s;
+}
+
+.header_link_white:hover::after {
+    animation: hoverLink 0.3s forwards;
+}
+
+.header_link_black {
+    position: relative;
+}
+
+.header_link_black::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background: #000;
+    left: 0;
+    bottom: 0;
+    transition: 0.1s;
+    animation: hoverOut 0.3s;
+}
+
+.header_link_black:hover::after {
+    animation: hoverLink 0.3s forwards;
+}
+
+@keyframes hoverLink {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes hoverOut {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}

@@ -1,2 +1,24 @@
+.strong_text {
+    color: #374151A1;
+}
+
 .footer {
+    border-top: 2px solid #D9D9D9;
+    width: 100%;
+    background-color: #F6F9FC;
+    display: flex;
+    justify-content: center;
+    color: #374151A1;
+}
+
+.footer_wrapper {
+    width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 16px;
+}
+
+.footer_info {
+    max-width: 320px;
 }

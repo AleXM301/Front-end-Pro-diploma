@@ -3,8 +3,6 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     destination: '',
     rating: '',
-    country: '',
-    priceRange: ''
 };
 
 const hotelsFilterSlice = createSlice({

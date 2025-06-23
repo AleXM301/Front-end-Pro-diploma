@@ -30,4 +30,15 @@ export default [
       ],
     },
   },
+  {
+    files: ['vite.config.js'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      globals: globals.node,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+    },
+  },
 ]

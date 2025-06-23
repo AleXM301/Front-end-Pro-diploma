@@ -8,17 +8,8 @@ const hotelRoutes = require("./routes/hotel");
 
 app.use(cors())
 app.use(express.json());
-app.get("/", (req, res) => {
-    res.send("Catalogue: /destination, /hotels, ");
-
-})
-
 app.use("/destination", destinationRoutes)
 app.use("/hotels", hotelsRoutes)
 app.use("/hotel", hotelRoutes)
-
-
-
-
 
 module.exports = app;

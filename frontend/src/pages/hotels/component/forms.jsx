@@ -1,28 +1,28 @@
 import {useSelector, useDispatch} from "react-redux";
 import {useEffect} from "react";
 
-import {Stack, FormControl, InputLabel, Select, MenuItem, Typography, Box} from "@mui/material";
+import {Stack, FormControl, InputLabel, Select, MenuItem, Typography, Box, Rating} from "@mui/material";
 
-import {getDestinations} from "../../../store/thunks/destinationsThunk.js";
-import {getHotels} from "../../../store/thunks/hotelsThunk.js";
-import {setFilter} from "../../../store/slices/hotelsFilterSlice.js";
+import {getHotels} from "@thunks/hotelsThunk.js"
+import  {setFilter} from "@slices/hotelsFilterSlice.js";
 
 import styles from './Forms.module.css';
 
 const Forms = () => {
+
     const filter = useSelector(state => state.filter);
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getDestinations());
-    }, [dispatch]);
 
     useEffect(() => {
-        dispatch(getHotels(filter));
-    }, [dispatch, filter]);
+        dispatch(getHotels({filters: filter}));
+    }, [ dispatch,filter]);
 
     const {destinations} = useSelector(state => state.destinations);
 
     const handleChange = (key) => (event) => {
+        if (filter.rating === event.target.value) {
+            return dispatch(setFilter({key, value: ''}));
+        }
         dispatch(setFilter({key, value: event.target.value}));
     };
 
@@ -34,46 +34,40 @@ const Forms = () => {
                         Filter
                     </Typography>
                 </Box>
-                <Box className={styles.filters_form}>
+                <Stack className={styles.filters_forms} spacing={2}>
 
                     <FormControl variant="standard" fullWidth>
                         <InputLabel htmlFor="filters">
                             Destination
                         </InputLabel>
-                        <Select labelId="filter"
-                                value={filter.destinations}
+                        <Select
+                            variant={"standard"}
+                            labelId="filter"
+                                value={filter.destination}
                                 onChange={handleChange("destination")}>
                             <MenuItem value=""><em>None</em></MenuItem>
                             {
                                 destinations.map((destination) => (
                                     <MenuItem key={destination.id} value={destination.label}>
-                                        {destination.label}</MenuItem>))
+                                        {destination.label}</MenuItem>
+                                ))
                             }
                         </Select>
                     </FormControl>
 
                     <FormControl variant="standard" fullWidth>
-
-                        <InputLabel htmlFor="Rating">
-                            Rating
-                        </InputLabel>
-
-                        <Select
-                            labelId="Rating"
+                        <Typography className={styles.filters_rating_title}>Rating</Typography>
+                        <Rating
                             value={filter.rating}
-                            onChange={handleChange("rating")}>
-
-                            <MenuItem value=""><em>None</em></MenuItem>
-                            <MenuItem value={0}>0</MenuItem>
-                            <MenuItem value={1}>1</MenuItem>
-                            <MenuItem value={2}>2</MenuItem>
-                            <MenuItem value={3}>3</MenuItem>
-                            <MenuItem value={4}>4</MenuItem>
-                            <MenuItem value={5}>5</MenuItem>
-                        </Select>
+                            onChange={handleChange("rating")}
+                            precision={0.5}
+                            sx={{fontSize: {lg:24,xs:33}}}
+                        />
                     </FormControl>
-                </Box>
+
+                </Stack>
             </Stack>
-        </>)
+        </>
+    )
 }
 export default Forms;

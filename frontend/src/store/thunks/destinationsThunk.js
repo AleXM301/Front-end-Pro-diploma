@@ -1,13 +1,11 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-
-const DESTINATIONS_API_URL = "http://localhost:3000/destination";
-
+import {API_URL} from "@config/api.js";
 
 export const getDestinations = createAsyncThunk(
     "destinations/getDestinations",
     async (_, {rejectWithValue}) => {
         try {
-            const res = await fetch(DESTINATIONS_API_URL);
+            const res = await fetch(API_URL.DESTINATIONS_API_URL);
             console.log('DESTINATION RESPONSE');
             return await res.json();
 

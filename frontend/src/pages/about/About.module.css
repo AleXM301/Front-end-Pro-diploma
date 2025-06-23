@@ -1,0 +1,13 @@
+.about_section{
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    color:#374151A1
+}
+.about_image{
+    width: 30px;
+    margin-right: 8px;
+}
+strong{
+    color: black;
+}

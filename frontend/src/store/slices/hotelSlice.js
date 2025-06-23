@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {getHotelsById} from "../thunks/hotelsThunk.js";
+import {getHotelsById} from "@thunks/hotelsThunk.js";
 
 const hotelSlice = createSlice({
     name: "hotel",

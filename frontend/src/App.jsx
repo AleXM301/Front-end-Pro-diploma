@@ -1,19 +1,19 @@
 import {createBrowserRouter, RouterProvider} from "react-router";
-import Layout from "./components/layout/index.jsx";
-import Hotels from './pages/hotels/index.jsx'
-import Hotel from "./pages/hotel/index.jsx";
-import Home from "./pages/home/index.jsx";
+import ROUTES from "./config/routes.js";
 
-//loader
-
+//Loader
+import {hotelsLoader} from "./loaders/hotelsLoader.js";
 //Page
-
-//Components
-
+import Home from "@pages/home";
+import Hotels from '@pages/hotels'
+import Hotel from "@pages/hotel";
+import About from "@pages/about";
+//Component
+import Layout from "@components/layout";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: ROUTES.HOME,
         element: <Layout/>,
         children: [
             {
@@ -21,32 +21,30 @@ const router = createBrowserRouter([
                 element: <Home/>,
             },
             {
-                path: "/hotels",
+                path: ROUTES.HOTELS,
                 element:<Hotels/>,
+                loader:hotelsLoader
             },
             {
-                path: "/hotel/:id",
+                path: ROUTES.HOTEL + "/:id",
                 element: <Hotel/>,
             },
             {
-                path: "/about",
-                element: <p>About</p>,
+                path: ROUTES.ABOUT,
+                element: <About/>,
             },
-
             {
-                path: "/*",
+                path: ROUTES.NOT_FOUND,
                 element: <div> 404 </div>,
             },
         ]
     },
-
 ]);
 
 
 function App() {
     return (
          <RouterProvider router={router}/>
-
     )
 }
 

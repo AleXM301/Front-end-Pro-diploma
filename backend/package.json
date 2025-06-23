@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server": "npx nodemon index.js "
+    "dev server": "npx nodemon index.js ",
+    "product server": "node index.js"
+
   },
   "keywords": [],
   "author": "",

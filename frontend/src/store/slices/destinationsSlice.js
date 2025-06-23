@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {getDestinations} from "../thunks/destinationsThunk.js";
+import {getDestinations} from "@thunks/destinationsThunk.js";
 
 const destinationsSlice = createSlice({
     name: "destinations",

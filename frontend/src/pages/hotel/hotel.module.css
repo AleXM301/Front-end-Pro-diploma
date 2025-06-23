@@ -1,26 +1,61 @@
-
-
-
-
 .hotel_container{
+    min-height: 100vh;
+    padding: 50px;
+    align-items: center;
+}
+
+.first_info {
+    margin-bottom: 24px;
+}
+
+.hotel_city {
+    color: #6B7280E3;
     display: flex;
     align-items: center;
-    justify-content: center;
-
 }
-.hotel_info_container{
+
+.hotel_hero_image {
+    width: 554px;
+    height: 370px;
+    top: 247px;
+    left: 141px;
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 1200px) {
+    .hotel_hero_image {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+}
+
+.hotel_second_images {
     display: flex;
-    flex-direction: column;
+    max-width: 541px;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-
-.hotel_info{
-    font-size: 20px;
-    text-align: center;
-
+.hotel_second_images > * {
+    width: 264px;
+    height: 176px;
+    border-radius: 15px;
 }
-.hotel_image{
+
+.hotel_image {
     width: 300px;
     height: auto;
     margin: 20px;
+}
+
+.hotel_container_detail_info {
+    border-radius: 16px;
+    background-color: #F6F9FC;
+    margin-top: 24px;
+}
+
+.hotel_detail_info {
+    color: #787878;
+    margin-left: 16px;
 }
