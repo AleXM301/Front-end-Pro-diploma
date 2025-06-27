@@ -8,7 +8,7 @@ import  {setFilter} from "@slices/hotelsFilterSlice.js";
 
 import styles from './Forms.module.css';
 
-const Forms = () => {
+const Form = () => {
 
     const filter = useSelector(state => state.filter);
     const dispatch = useDispatch();
@@ -70,4 +70,4 @@ const Forms = () => {
         </>
     )
 }
-export default Forms;
+export default Form;

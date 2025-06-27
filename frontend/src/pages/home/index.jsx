@@ -1,7 +1,7 @@
-import HeroSection from "@pages/home/component/hero.jsx";
-import FeaturedHotels from "@pages/home/component/featuredHotels.jsx"
-import OffersSection from "@pages/home/component/offersSection.jsx"
-import GuestsSaySection from "@pages/home/component/guestsSaySections.jsx";
+import HeroSection from "@pages/home/components/Hero.jsx";
+import FeaturedHotels from "@pages/home/components/FeaturedHotels.jsx"
+import OffersSection from "@pages/home/components/OffersSection.jsx"
+import GuestsSaySection from "@pages/home/components/GuestsSaySections.jsx";
 const Home = () => (
     <>
         <HeroSection/>
